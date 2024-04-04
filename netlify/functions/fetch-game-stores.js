@@ -1,9 +1,8 @@
-const apiKey = process.env.RAWG_API;
-
 export async function handler(event) {
-  const apiKey = process.env.RAWG_API; // Using the same environment variable as in fetch-game-description.js
+  const apiKey = process.env.RAWG_API;
+
   const gameId = event.queryStringParameters.gameId;
-  console.log("game id: " + gameId);
+
   if (!gameId) {
     return {
       statusCode: 400,

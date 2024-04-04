@@ -1,5 +1,4 @@
 const youtube_key = process.env.YOUTUBE_API;
-
 export async function handler(event) {
   const gameName = event.queryStringParameters.gameName;
   try {

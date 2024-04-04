@@ -1,10 +1,9 @@
-const apiKey = process.env.RAWG_API;
-
 export async function handler(event) {
   const gameName = event.queryStringParameters.gameName;
+  const apiKey = process.env.RAWG_API;
 
   try {
-    const response = await fetch(`https://api.rawg.io/api/games?key=${apiKey}&search=${gameName}&parent_platforms=1&search_precise=true`);
+    const response = await fetch(`https://api.rawg.io/api/games?key=${apiKey}&search=${gameName}&search_precise=true&parent_platforms=1`);
     if (!response.ok) {
       throw new Error("Failed to fetch game data");
     }
