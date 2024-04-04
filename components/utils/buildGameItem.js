@@ -6,18 +6,13 @@ export const gameList = document.querySelector(".game-list");
 
 export async function buildGame(game) {
   if (game.stores !== null) {
-    const includesStore = game.stores.some(
-      (store) =>
-        store.store.id === 5 ||
-        store.store.id === 1 ||
-        store.store.id === 2 ||
-        store.store.id === 11
-    );
+    const includesStore = game.stores.some((store) => store.store.id === 5 || store.store.id === 1 || store.store.id === 2 || store.store.id === 11);
+    console.log("Includes Store: ", includesStore);
     if (!includesStore) {
       return;
     }
     // console.log(game.name);
-      const response = await fetch(`/.netlify/functions/fetch-game-description?gameId=${game.id}`);
+    const response = await fetch(`/.netlify/functions/fetch-game-description?gameId=${game.id}`);
     const text = await response.json();
 
     const gameItem = document.createElement("li");
@@ -72,15 +67,15 @@ export async function buildGame(game) {
 
     clickables.appendChild(linkContainer);
 
-    textDecider(text, gameDesc, storeFronts, clickables);
+    textDecider(text, gameDesc, storeFronts, clickables, gameInfo);
 
     // adjustPadding(gameList);
     //-----------------STOREFRONT LOGO CODE-----------------//
 
-     const storeResponse = await fetch(`/.netlify/functions/fetch-game-stores?gameId=${game.id}`);
+    const storeResponse = await fetch(`/.netlify/functions/fetch-game-stores?gameId=${game.id}`);
     const stores = await storeResponse.json();
 
-    stores.forEach((store) => {
+    stores.results.forEach((store) => {
       switch (store.store_id) {
         case 1:
           iconGenerator.createSteam(store, storeFronts);
