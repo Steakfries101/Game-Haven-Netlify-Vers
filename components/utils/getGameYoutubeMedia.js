@@ -1,5 +1,3 @@
-import { fetchYoutubePlaylist, fetchYoutubeTrailer } from "./fetchGameData.js";
-
 export async function getPlaylist(gameName) {
   const encodePlaylist = encodeURIComponent(gameName);
 
