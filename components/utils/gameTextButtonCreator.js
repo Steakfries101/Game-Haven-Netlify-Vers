@@ -1,13 +1,13 @@
-function textDecider(text, gameDesc, storeFronts, gameTitle) {
+function textDecider(text, gameDesc, storeFronts, gameTitle, gameInfo) {
   const num = 250;
   const textParsed = text.description;
 
   const descriptionContainer = document.createElement("div");
   descriptionContainer.className = "description-container";
 
-  if (text.length > num) {
-    const part1 = text.slice(0, num);
-    const part2 = text.slice(num);
+  if (textParsed.length > num) {
+    const part1 = textParsed.slice(0, num);
+    const part2 = textParsed.slice(num);
 
     const part1Para = document.createElement("p");
     part1Para.innerHTML = `${part1}<strong>...</strong>`;
@@ -42,9 +42,9 @@ function textDecider(text, gameDesc, storeFronts, gameTitle) {
       part2Para.style.display = "none";
       part1Para.style.display = "block";
     });
-  } else if (text.length < num) {
+  } else if (textParsed.length < num) {
     const part1Para = document.createElement("p");
-    part1Para.textContent = text;
+    part1Para.textContent = textParsed;
     gameDesc.appendChild(part1Para);
     descriptionContainer.appendChild(part1Para);
     gameTitle.appendChild(storeFronts);
