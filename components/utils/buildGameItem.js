@@ -18,7 +18,8 @@ export async function buildGame(game) {
       return;
     }
     // console.log(game.name);
-    const text = await getGameDescription(game.id);
+      const response = await fetch(`/.netlify/functions/fetch-game-description?gameId=${game.id}`);
+    const text = await response.json();
 
     const gameItem = document.createElement("li");
     gameItem.className = "game-item";
@@ -77,7 +78,9 @@ export async function buildGame(game) {
     // adjustPadding(gameList);
     //-----------------STOREFRONT LOGO CODE-----------------//
 
-    const stores = await getGameStores(game.id);
+     const storeResponse = await fetch(`/.netlify/functions/fetch-game-stores?gameId=${game.id}`);
+    const stores = await storeResponse.json();
+
     stores.forEach((store) => {
       switch (store.store_id) {
         case 1:
