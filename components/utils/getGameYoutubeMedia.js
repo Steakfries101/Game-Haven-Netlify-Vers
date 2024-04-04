@@ -4,7 +4,8 @@ export async function getPlaylist(gameName) {
   const encodePlaylist = encodeURIComponent(gameName);
 
   try {
-    const playlistData = await fetchYoutubePlaylist(encodePlaylist);
+    const response = await fetch(`/.netlify/functions/fetch-youtube-playlist?gameName=${encodePlaylist}`);
+    const playlistData = await response.json();
     if (playlistData) {
       window.open(`//www.youtube.com/playlist?list=${playlistData[0].id.playlistId}`);
     }
@@ -15,14 +16,15 @@ export async function getPlaylist(gameName) {
 }
 
 export async function getTrailer(gameName) {
-  let gameRename = "";
-  if (!gameName.includes("1")) {
-    gameRename = gameName + " 1";
-  } else {
-    gameRename = gameName;
-  }
+  let gameRename = gameName.includes("1") ? gameName : `${gameName} 1`;
   const encodeTrailer = encodeURIComponent(gameRename);
-  const trailerData = await fetchYoutubeTrailer(encodeTrailer);
-  const videoId = trailerData[0].id.videoId;
-  window.open(`https://www.youtube.com/watch?v=${videoId}`);
+  try {
+    const response = await fetch(`/.netlify/functions/fetch-youtube-trailer?gameName=${encodeTrailer}`);
+    const trailerData = await response.json();
+
+    const videoId = trailerData[0].id.videoId;
+    window.open(`https://www.youtube.com/watch?v=${videoId}`);
+  } catch (error) {
+    console.error("Unable to find trailer:", error);
+  }
 }
