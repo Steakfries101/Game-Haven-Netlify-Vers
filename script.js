@@ -1,7 +1,6 @@
 import { adjustPadding } from "./components/adjustPadding.js";
 import { search } from "./components/search.js";
 import { buildGame } from "./components/utils/buildGameItem.js";
-import { fetchGameData } from "./components/utils/fetchGameData.js";
 import { toTopHider } from "./components/toTopLink.js";
 import { gameList } from "./components/utils/buildGameItem.js";
 
@@ -36,6 +35,7 @@ export async function loopData(gameName) {
     return;
   }
 }
+
 export function getSearchValue() {
   const value = document.querySelector(".search-bar").value;
   return value;
