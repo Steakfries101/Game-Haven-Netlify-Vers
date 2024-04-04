@@ -4,9 +4,7 @@ export async function handler(event) {
   const gameName = event.queryStringParameters.gameName;
 
   try {
-    const response = await fetch(
-      `https://api.rawg.io/api/games?key=${apiKey}&search=${gameName}&search_precise=true&ordering=name&parent_platforms=1`
-    );
+    const response = await fetch(`https://api.rawg.io/api/games?key=${apiKey}&search=${gameName}&parent_platforms=1&search_precise=true`);
     if (!response.ok) {
       throw new Error("Failed to fetch game data");
     }
