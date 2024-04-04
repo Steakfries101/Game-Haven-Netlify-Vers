@@ -1,0 +1,526 @@
+/*VARIABLES*/
+:root {
+  --primary-color: orange;
+  --body-font: "Poppins", sans-serif;
+  --heading-font: "Bebas Neue", sans-serif;
+  --full-width: 100%;
+  --full-height: 100%;
+  --scrollbar-color: #d98c00 #f43c04;
+  ;
+}
+
+/**************************************************GLOBAL STYLINGS html*/
+
+
+p {
+  font-family: var(--body-font);
+}
+
+h2 {
+  color: black;
+  text-align: center;
+  font-family: var(--heading-font);
+  letter-spacing: 1.4px;
+  font-size: 3rem;
+}
+
+h1 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+}
+
+/***********CSS TO KEEP FOOTER AT BOTTOM OF SCREEN */
+body,
+html {
+  height: var(--full-height);
+  margin: 0;
+}
+
+body {
+  background-color: black;
+}
+
+li img {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--full-height);
+  ;
+}
+
+#logo {
+  width: 45%;
+}
+
+#top-bar {
+  text-align: left;
+}
+
+
+/*Intro text CSS */
+.intro {
+  width: 75%;
+  display: block;
+  margin: auto;
+  padding-top: 50px;
+  color: white;
+}
+
+/************************************************** Search Bar CSS*/
+.search-container {
+  padding-bottom: 100px;
+}
+
+#search-bar {
+  width: var(--full-width);
+  ;
+  padding: 10px;
+  border: #f43c04 solid 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: var(--heading-font);
+}
+
+#search-submit {
+  cursor: pointer;
+  border-radius: 3px;
+  padding-left: 30px;
+  border: none;
+  color: black;
+  background: var(--primary-color);
+  line-height: 1.15;
+  font-size: 20px;
+  font-family: var(--body-font);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 23px;
+}
+
+.button-container {
+  width: 75%;
+  margin-top: 30px;
+  text-align: center;
+  margin: auto;
+}
+
+#search-icon {
+  margin-right: 20px;
+  transition: color 0.1s linear;
+}
+
+#search-submit:hover #search-icon {
+  size: 23px;
+  color: red;
+}
+
+
+.search-display {
+  color: white;
+  text-align: center;
+  padding: 45px;
+  font-size: 3rem;
+}
+
+.input-container {
+  width: 75%;
+  margin: auto;
+  position: relative;
+}
+
+#search-text {
+  display: none;
+}
+
+
+
+/************************************************** Footer CSS */
+
+#footer {
+  flex-shrink: 0;
+  background-color: var(--primary-color);
+  ;
+  padding-bottom: 20px;
+  height: 100px;
+  width: var(--full-width);
+  ;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-shadow: rgba(255, 165, 0, 0.4) 0px -5px, rgba(255, 165, 0, 0.3) 0px -10px, rgba(255, 165, 0, 0.2) 0px -15px, rgba(255, 165, 0, 0.1) 0px -20px,
+    rgba(255, 165, 0, 0.05) 0px -25px;
+}
+
+#footer h3 {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 1rem;
+  font-family: var(--body-font);
+}
+
+#copyright {
+  padding-left: 50px;
+}
+
+/*Read more and Read less button stylings */
+.read-more,
+.read-less {
+
+  font-weight: bolder;
+  color: #000080;
+  display: block;
+  cursor: pointer;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.read-more:hover,
+.read-less:hover {
+  text-decoration: underline;
+}
+
+
+
+/************************************************** Top bar CSS */
+#top-bar {
+  background-color: var(--primary-color);
+  ;
+  text-align: center;
+  box-shadow: rgba(255, 165, 0, 0.4) 0px 5px, rgba(255, 165, 0, 0.3) 0px 10px, rgba(255, 165, 0, 0.2) 0px 15px, rgba(255, 165, 0, 0.1) 0px 20px,
+    rgba(255, 165, 0, 0.05) 0px 25px;
+}
+
+/************************************************** To top button CSS */
+#to-top {
+  position: fixed;
+  display: flex;
+  opacity: 0;
+  color: white;
+  font-size: 3.5rem;
+  z-index: 35;
+  right: 10px;
+  bottom: 10px;
+  background-color: #f43c04;
+  border-radius: 75%;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: opacity .2s linear;
+}
+
+#to-top:hover {
+  cursor: pointer;
+}
+
+#to-top:hover .fa-angles-up {
+  filter: brightness(75%)
+}
+
+#to-top:active {
+  font-size: 3rem;
+}
+
+.hide {
+  opacity: 0%;
+}
+
+.show {
+  opacity: 100% !important;
+}
+
+
+/***********************************Storefront CSS (Store logos and links)*/
+
+.store-fronts img {
+  width: 67px;
+}
+
+.store-fronts h4 {
+  font-family: var(--body-font);
+  display: none;
+}
+
+
+.store-fronts {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/*********************************** Game Item (card) CSS */
+.game-list {
+  margin-left: -40px;
+  background-color: #203a78;
+  box-shadow: rgba(50, 91, 188, 0.4) 0px -5px 0px, rgba(50, 91, 188, 0.3) 0px -10px 0px, rgba(50, 91, 188, 0.2) 0px -15px 0px,
+    rgba(50, 91, 188, 0.1) 0px -20px 0px, rgba(50, 91, 188, 0.05) 0px -25px 0px;
+  margin-bottom: 0;
+}
+
+.game-data {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--primary-color);
+  transition: border-left 200ms ease, border-right 200ms ease, box-shadow 200ms;
+  background-color: var(--primary-color);
+  filter: brightness(100%);
+  transition: filter 200ms linear;
+
+}
+
+.game-cover {
+  max-width: 90%;
+  max-height: 399px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.game-desc {
+  color: black;
+  max-width: 75%;
+  font-size: 1.2rem;
+  padding-bottom: 50px;
+}
+
+.description-container {
+  margin-top: 20px;
+  max-height: 506px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trailer-ost-links {
+  color: navy;
+  font-size: 1.8rem;
+  font-family: var(--heading-font);
+}
+
+.clickables-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+
+
+.form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: var(--full-width);
+  ;
+}
+
+/*********************************** LARGESCREEN MEDIA QUERIES*/
+
+
+@media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .clickables-container {
+      flex-direction: column-reverse !important;
+    }
+
+    .link-container p {
+      margin-top: 5px !important;
+    }
+
+    .description-container {
+      max-height: fit-content;
+    }
+
+
+  }
+
+  #logo {
+    width: 15%;
+    margin-left: 200px;
+  }
+
+  #top-bar {
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  /************************************************** Game Item CSS Media Queries*/
+
+  .game-data {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 85%;
+    filter: brightness(85%);
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 5px;
+  }
+
+  .game-data:hover {
+    filter: brightness(100%);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .game-desc {
+    max-width: 40%;
+    padding-right: 75px;
+    font-size: 1rem;
+    min-width: 15%;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .defaultDesc {
+    margin-right: 4%;
+    margin-left: -50px;
+    font-size: 1.5rem;
+  }
+
+  .game-cover {
+    max-width: 40%;
+    max-height: 399px;
+    margin-left: 55px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+
+
+  .link-container {
+    justify-content: start;
+    padding-top: 0px;
+    padding-right: 20px;
+    gap: 20px;
+  }
+
+  .trailer-ost-links {
+    font-size: 1.7rem;
+    height: 30px;
+  }
+
+  .trailer-ost-links:hover {
+    cursor: pointer;
+    border-bottom: 3px navy solid;
+    padding-bottom: 0px;
+  }
+
+  .clickables-container p {
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+
+  .clickables-container {
+    flex-direction: row-reverse;
+  }
+
+  .description-container {
+    scrollbar-color: var(--scrollbar-color);
+    max-height: 256px;
+    padding-right: 10px;
+    align-content: center;
+  }
+
+  /*Storefront link/icon CSS*/
+
+  .store-fronts img {
+    width: 50px;
+    height: 50px;
+    transition: width 100ms linear, height 100ms linear;
+    margin-right: 10px;
+  }
+
+  .store-fronts img:hover {
+    height: 47px;
+    width: 47px;
+  }
+
+  .store-fronts {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+  }
+
+
+
+
+  .site-body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    margin: auto;
+  }
+
+  .intro {
+    margin: auto;
+  }
+
+
+
+  .site-body {
+    max-width: 70%;
+  }
+
+  .read-more {
+    margin-bottom: -30px;
+  }
+
+  /************************************************** Search CSS*/
+
+  #search-bar {
+    font-size: 25px;
+
+  }
+
+  #search-text {
+    display: block;
+  }
+
+  #search-submit {
+    padding: 5px 20px 0px 40px;
+  }
+
+  #search-submit:hover {
+    transition: all 0.1s ease;
+
+  }
+
+  .input-container {
+    margin: 0;
+  }
+
+  /************************************************** To Top Button CSS */
+  #to-top {
+    right: 40px;
+    bottom: 40px;
+  }
+
+
+}
