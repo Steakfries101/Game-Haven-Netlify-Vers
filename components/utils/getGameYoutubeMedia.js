@@ -23,7 +23,6 @@ export async function getTrailer(gameName) {
 
   const encodeTrailer = encodeURIComponent(gameRename);
   try {
-    // Replace 'fetch-youtube-trailer' with the actual path/name of your Netlify function
     const response = await fetch(
       `/.netlify/functions/fetch-youtube-trailer?gameName=${encodeTrailer}`
     );
