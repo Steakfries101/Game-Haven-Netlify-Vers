@@ -1,3 +1,5 @@
+const apiKey = process.env.RAWG_API;
+
 export async function handler(event) {
   const gameId = event.queryStringParameters.gameId;
   try {
