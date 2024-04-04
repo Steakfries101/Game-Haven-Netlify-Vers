@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Beginning of loop that loops through returned data games and builds javascript
 export async function loopData(gameName) {
-  const gameData = await fetchGameData(gameName);
+  const response = await fetch(`/.netlify/functions/fetch-game-data?gameName=${gameName}`);
+  const gameData = await response.json();
   const error = document.createElement("h2");
   error.className = "search-display";
   error.textContent = searchDisplay(gameData);
