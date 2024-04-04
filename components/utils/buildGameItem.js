@@ -1,7 +1,6 @@
 import * as iconGenerator from "./storeIconGenerator.js";
 import { textDecider } from "./gameTextButtonCreator.js";
 import { getPlaylist, getTrailer } from "./getGameYoutubeMedia.js";
-import { getGameDescription, getGameStores } from "./fetchGameData.js";
 
 export const gameList = document.querySelector(".game-list");
 
