@@ -30,17 +30,20 @@ function textDecider(text, gameDesc, storeFronts, gameTitle, gameInfo) {
     part1Para.appendChild(readMore);
 
     const readLess = document.createElement("a");
-    readLess.className = "read-less";
+    readLess.className = "read-less-hide";
+
     readLess.textContent = "Read Less";
     part2Para.appendChild(readLess);
 
     readMore.addEventListener("click", () => {
       part2Para.style.display = "block";
       part1Para.style.display = "none";
+      readLess.className = "read-less-show";
     });
     readLess.addEventListener("click", () => {
       part2Para.style.display = "none";
       part1Para.style.display = "block";
+      readLess.className = "read-less-hide";
     });
   } else if (textParsed.length < num) {
     const part1Para = document.createElement("p");
