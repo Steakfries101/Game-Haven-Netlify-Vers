@@ -6,11 +6,9 @@
   --full-width: 100%;
   --full-height: 100%;
   --scrollbar-color: #d98c00 #f43c04;
-  ;
 }
 
 /**************************************************GLOBAL STYLINGS html*/
-
 
 p {
   font-family: var(--body-font);
@@ -48,7 +46,6 @@ li img {
   display: flex;
   flex-direction: column;
   min-height: var(--full-height);
-  ;
 }
 
 #logo {
@@ -58,7 +55,6 @@ li img {
 #top-bar {
   text-align: left;
 }
-
 
 /*Intro text CSS */
 .intro {
@@ -76,7 +72,6 @@ li img {
 
 #search-bar {
   width: var(--full-width);
-  ;
   padding: 10px;
   border: #f43c04 solid 5px;
   border-radius: 10px;
@@ -117,7 +112,6 @@ li img {
   color: red;
 }
 
-
 .search-display {
   color: white;
   text-align: center;
@@ -135,18 +129,14 @@ li img {
   display: none;
 }
 
-
-
 /************************************************** Footer CSS */
 
 #footer {
   flex-shrink: 0;
   background-color: var(--primary-color);
-  ;
   padding-bottom: 20px;
   height: 100px;
   width: var(--full-width);
-  ;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -167,8 +157,7 @@ li img {
 
 /*Read more and Read less button stylings */
 .read-more,
-.read-less {
-
+.read-less-show {
   font-weight: bolder;
   color: #000080;
   display: block;
@@ -177,6 +166,7 @@ li img {
   text-align: center;
   margin: auto;
   font-size: 1rem;
+  font-family: var(--body-font);
 }
 
 .read-more:hover,
@@ -184,12 +174,17 @@ li img {
   text-decoration: underline;
 }
 
-
-
+.read-less-hide {
+  display: none !important;
+}
+.read-less-show {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+}
 /************************************************** Top bar CSS */
 #top-bar {
   background-color: var(--primary-color);
-  ;
   text-align: center;
   box-shadow: rgba(255, 165, 0, 0.4) 0px 5px, rgba(255, 165, 0, 0.3) 0px 10px, rgba(255, 165, 0, 0.2) 0px 15px, rgba(255, 165, 0, 0.1) 0px 20px,
     rgba(255, 165, 0, 0.05) 0px 25px;
@@ -206,16 +201,15 @@ li img {
   right: 10px;
   bottom: 10px;
   background-color: #f43c04;
-  border-radius: 75%;
+  border-radius: 20px;
   justify-content: center;
   text-decoration: none;
   align-items: center;
   width: 75px;
   height: 75px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  transition: opacity .2s linear;
+  transition: opacity 0.2s linear;
 }
 
 #to-top:hover {
@@ -223,7 +217,7 @@ li img {
 }
 
 #to-top:hover .fa-angles-up {
-  filter: brightness(75%)
+  filter: brightness(75%);
 }
 
 #to-top:active {
@@ -238,7 +232,6 @@ li img {
   opacity: 100% !important;
 }
 
-
 /***********************************Storefront CSS (Store logos and links)*/
 
 .store-fronts img {
@@ -249,7 +242,6 @@ li img {
   font-family: var(--body-font);
   display: none;
 }
-
 
 .store-fronts {
   display: flex;
@@ -279,7 +271,6 @@ li img {
   background-color: var(--primary-color);
   filter: brightness(100%);
   transition: filter 200ms linear;
-
 }
 
 .game-cover {
@@ -288,17 +279,23 @@ li img {
   margin-bottom: 50px;
   margin-top: 50px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .game-desc {
   color: black;
   max-width: 75%;
   font-size: 1.2rem;
-  padding-bottom: 50px;
-}
+  margin-top: 30px;
 
+  /* padding-bottom: 50px; */
+}
+.read-more {
+  margin-top: 30px;
+}
+.game-desc h2 {
+  padding-top: 0px;
+  margin-top: 0px;
+}
 .description-container {
   margin-top: 20px;
   max-height: 506px;
@@ -325,17 +322,14 @@ li img {
   flex-wrap: wrap-reverse;
 }
 
-
 .form-container {
   align-items: center;
   display: flex;
   flex-direction: column;
   width: var(--full-width);
-  ;
 }
 
 /*********************************** LARGESCREEN MEDIA QUERIES*/
-
 
 @media only screen and (min-width: 1000px) {
   @media only screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -350,8 +344,6 @@ li img {
     .description-container {
       max-height: fit-content;
     }
-
-
   }
 
   #logo {
@@ -389,11 +381,12 @@ li img {
   .game-desc {
     max-width: 40%;
     padding-right: 75px;
-    font-size: 1rem;
+    font-size: 16px;
     min-width: 15%;
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
+    height: 475px;
   }
 
   .defaultDesc {
@@ -410,8 +403,6 @@ li img {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
-
-
 
   .link-container {
     justify-content: start;
@@ -435,7 +426,9 @@ li img {
     margin-bottom: 0px;
     margin-top: 20px;
   }
-
+  .description-container p {
+    max-height: 200px;
+  }
   .clickables-container {
     flex-direction: row-reverse;
   }
@@ -445,6 +438,8 @@ li img {
     max-height: 256px;
     padding-right: 10px;
     align-content: center;
+    padding-bottom: 50px;
+    margin-top: 20px;
   }
 
   /*Storefront link/icon CSS*/
@@ -467,9 +462,6 @@ li img {
     justify-content: start;
   }
 
-
-
-
   .site-body {
     display: flex;
     flex-direction: column;
@@ -481,8 +473,6 @@ li img {
   .intro {
     margin: auto;
   }
-
-
 
   .site-body {
     max-width: 70%;
@@ -496,7 +486,6 @@ li img {
 
   #search-bar {
     font-size: 25px;
-
   }
 
   #search-text {
@@ -509,7 +498,6 @@ li img {
 
   #search-submit:hover {
     transition: all 0.1s ease;
-
   }
 
   .input-container {
@@ -518,9 +506,7 @@ li img {
 
   /************************************************** To Top Button CSS */
   #to-top {
-    right: 40px;
+    right: 120px;
     bottom: 40px;
   }
-
-
 }
