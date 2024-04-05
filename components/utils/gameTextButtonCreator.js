@@ -33,7 +33,7 @@ function textDecider(text, gameDesc, storeFronts, gameTitle, gameInfo) {
     readLess.className = "read-less-hide";
 
     readLess.textContent = "Read Less";
-    part2Para.appendChild(readLess);
+    gameDesc.appendChild(readLess);
 
     readMore.addEventListener("click", () => {
       part2Para.style.display = "block";
