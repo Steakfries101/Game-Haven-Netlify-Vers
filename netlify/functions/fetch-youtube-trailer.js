@@ -6,7 +6,7 @@ export async function handler(event) {
 
   try {
     const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&maxResults=1&q=${gameName} game trailer&key=${youtube_key}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&maxResults=1&q=${encodedName}%20game%20trailer&key=${youtube_key}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch youtube data");
