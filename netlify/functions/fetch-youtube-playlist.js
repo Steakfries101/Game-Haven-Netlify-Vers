@@ -1,9 +1,11 @@
 const youtube_key = process.env.YOUTUBE_API;
+
 export async function handler(event) {
   const gameName = event.queryStringParameters.gameName;
+  const encodedName = encodeURIComponent(gameName);
   try {
     const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${gameName} intitle:ost|intitle:soundtrack &type=playlist&key=${youtube_key}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${encodedName}%20intitle:ost|intitle:soundtrack%20&type=playlist&key=${youtube_key}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch youtube playlist data");
