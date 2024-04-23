@@ -2,17 +2,17 @@ const youtube_key = process.env.YOUTUBE_API;
 
 export async function handler(event) {
   const gameName = event.queryStringParameters.gameName;
-
+  console.log(gameName);
   try {
     const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&maxResults=1&q=${gameName} game trailer&key=${youtube_key}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&maxResults=1&q=${gameName}%20game%20trailer&key=${youtube_key}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch youtube data");
     }
     const youtubeData = await response.json();
     const videos = youtubeData.items;
-    // console.log(youtubeData);
+    console.log(youtubeData);
     return {
       statusCode: 200,
       body: JSON.stringify(videos),
